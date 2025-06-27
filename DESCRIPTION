@@ -1,0 +1,27 @@
+Package: eurostat
+Title: eurostat-dashboard
+Version: 1.0.0.0000
+Description: |
+    A robust, Shiny application for analyzing and visualizing data while
+    comparing multiple statictics.
+    Built as an R package using the golem framework, this app offers modularity, scalability,
+    and secure database connectivity. Includes multi-layered data visualization, customizable UI,
+    and is ready for deployment on various platforms.
+License: EUPL
+Imports:
+    config (>= 0.3.1),
+    golem (>= 0.4.0),
+    shiny (>= 1.7.4),
+    DBI,
+    odbc,
+    dplyr,
+    reactable,
+    htmltools,
+    dbplyr,
+    logger
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.3.1
+Suggests:
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
