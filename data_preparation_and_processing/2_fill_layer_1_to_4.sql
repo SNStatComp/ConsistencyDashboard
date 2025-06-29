@@ -267,7 +267,7 @@ JOIN #group_totals gt ON (  -- For score calculation, always use the denominator
 		AND gt.group_id = pop.group_id
 		AND dat1.period_id = gt.period_id
 		) 
-JOIN #source_denominator sd ON (  -- Addition to the previous join: use the denominator total of the stat from the #bron_noemer table, and use the denominator total of stat1 if stat in #bron_noemer is empty
+JOIN #source_denominator sd ON (  -- Addition to the previous join: use the denominator total of the stat from the #source_denominator table, and use the denominator total of stat1 if stat in #source_denominator is empty
 		dat1.variable_id = sd.variable_id
 		AND gt.stat_id = ISNULL(sd.statistic_id, dat1.stat_id)
 		)

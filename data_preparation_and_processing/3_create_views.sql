@@ -19,7 +19,7 @@ DECLARE @COLUMN_NAMES_LAYER1 NVARCHAR(MAX);
 DECLARE @SQL_VIEW_LAYER1 NVARCHAR(MAX);
 
 -- Step 1. Generate list of unique variables
-SELECT @COLUMN_NAMES_LAYER1 = STRING_AGG(QUOTENAME([value]), ', ')  -- The order of variables from the #bron_noemer table is preserved. If alphabetical order is preferred, add: WITHIN GROUP (ORDER BY variable)
+SELECT @COLUMN_NAMES_LAYER1 = STRING_AGG(QUOTENAME([value]), ', ')  -- The order of variables from the #source_denominator table is preserved. If alphabetical order is preferred, add: WITHIN GROUP (ORDER BY variable)
 FROM (SELECT [value] FROM [variable]) AS column_names;
 
 -- Step 2. Build dynamical PIVOT-query
@@ -144,7 +144,7 @@ DECLARE @COLUMN_NAMES_LAYER4 NVARCHAR(MAX);
 DECLARE @SQL_VIEW_LAYER4 NVARCHAR(MAX);
 
 -- Step 1. Generate list of unique variables
-SELECT @COLUMN_NAMES_LAYER4 = STRING_AGG(QUOTENAME([value]), ', ')  -- The order of variables from the #bron_noemer table is preserved. If alphabetical order is preferred, add: WITHIN GROUP (ORDER BY variable)
+SELECT @COLUMN_NAMES_LAYER4 = STRING_AGG(QUOTENAME([value]), ', ')  -- The order of variables from the #source_denominator table is preserved. If alphabetical order is preferred, add: WITHIN GROUP (ORDER BY variable)
 FROM (SELECT [value] FROM [statistic]) AS column_names;
 
 -- Step 2. Build dynamical PIVOT-query
